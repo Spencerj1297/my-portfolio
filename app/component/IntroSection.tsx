@@ -20,16 +20,17 @@ export const IntroSection = () => {
     >
       <div
         ref={ref}
-        className="flex flex-col justify-center items-center md:items-start md:justify-start gap-8 px-8 pt-8 z-20"
+        className="flex flex-col justify-center items-center md:items-start md:justify-start gap-8 pt-8 z-20"
       >
-        <h1 className={`text-6xl lg:text-9xl text-customGrey mb-16`}>
+        <h1 className={`text-6xl lg:text-[150px] text-customGrey mb-16`}>
           Welcome
         </h1>
-        <h2 className="text-2xl lg:text-4xl text-customGrey ">
-          I&apos;m Spencer, <br />
+        <h2 className="text-4xl lg:text-[60px] text-customGrey ">
+          I&apos;m Spencer, 
+          <br /><br/>
           Software Developer{" "}
         </h2>
-        <p className="text-lg lg:text-xl text-customGrey text-center md:text-start border-l-2 px-4 lg:max-w-[600px]">
+        <p className="text-xl lg:text-2xl text-customGrey text-center md:text-start border-l-2 px-4 lg:max-w-3xl lg:mt-12">
           I specialize in building (and occasionally designing) exceptional
           digital experiences. Currently, I’m focused on building accessible,
           human-centered products at Zoee Inc.{" "}

@@ -64,9 +64,9 @@ export default function Home() {
         <Projects />
       </div>
       <SkillsSections />
-      <div className="w-full" id="contactSection">
+      {/* <div className="w-full" id="contactSection">
         <Contact />
-      </div>
+      </div> */}
     </main>
   );
 }

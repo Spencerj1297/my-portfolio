@@ -10,6 +10,10 @@ import {
   IconBrandCSharp,
   IconSql,
   IconBrandAws,
+  IconBrandJavascript,
+  IconBrandReactNative,
+  IconBrandNodejs,
+  IconBrandTailwind
 } from "@tabler/icons-react";
 import {
   motion,
@@ -25,123 +29,99 @@ export const SkillsSections = () => {
   let { scrollYProgress } = useScroll();
   const [animateComplete, setAnimateComplete] = useState<boolean>(false);
 
-  const frontendSkills = [
-    {
-      language: "React.js",
-      icon: <IconBrandReact color="white"/>,
-    },
-    {
-      language: "TypeScript",
-      icon: <IconBrandTypescript color="white"/>,
-    },
-    {
-      language: "Next.js",
-      icon: <IconBrandNextjs color="white"/>,
-    },
+  const languages = [
     {
       language: "Python",
-      icon: <IconBrandPython color="white"/>,
-    },
-    {
-      language: "Ruby",
-      icon: <IconDiamond color="white"/>,
-    },
-    {
-      language: "HTML",
-      icon: <IconHtml color="white"/>,
-    },
-    {
-      language: "CSS",
-      icon: <IconBrandCss3 color="white"/>,
-    },
-  ];
-
-  const backendSkills = [
-    {
-      language: "Python",
-      icon: <IconBrandPython color="white"/>,
-    },
-    {
-      language: "C++",
-      icon: <IconBrandTypescript color="white"/>,
+      icon: <IconBrandPython height={150} width={150} />,
+      styling: "text-pythonYellow bg-pythonBlue hover:text-pythonBlue hover:bg-pythonYellow ease-in-out duration-300 h-80 w-72",
+      position: "end",
+      order: "order-2",
+      textOrder: "order-1",
     },
     {
       language: "C#",
-      icon: <IconBrandCSharp color="white"/>,
+      icon: <IconBrandCSharp height={150} width={150} />,
+      styling: "text-white bg-cSharpPurple hover:text-cSharpPurple hover:bg-white ease-in-out duration-300 h-80 w-72",
+      position: "end",
+      order: "order-2",
+      textOrder: "order-1",
     },
     {
-      language: "Rails",
-      icon: <IconBrandPython color="white"/>,
+      language: "Ruby on Rails",
+      icon: <IconDiamond height={150} width={150} />,
+      styling: "text-white bg-rubyRed hover:text-rubyRed hover:bg-white ease-in-out duration-300 h-80 w-72",
+      position: "start",
+      order: "order-1",
+      textOrder: "order-2",
+    },
+    {
+      language: "Javascript",
+      icon: <IconBrandJavascript height={150} width={150} />,
+      styling: "text-black bg-jsYellow hover:text-jsYellow hover:bg-black ease-in-out duration-300 h-80 w-72",
+      position: "end",
+      order: "order-2",
+      textOrder: "order-1",
+    },
+    {
+      language: "React.js",
+      icon: <IconBrandReactNative height={150} width={150} />,
+      styling: "text-reactBlue bg-reactGrey hover:text-reactGrey hover:bg-reactBlue ease-in-out duration-300 h-80 w-72",
+      position: "end",
+      order: "order-2",
+      textOrder: "order-1",
+    },
+    {
+      language: "Node.js",
+      icon: <IconBrandNodejs height={150} width={150} />,
+      styling: "text-nodeGreen bg-nodeBlue hover:text-nodeBlue hover:bg-nodeGreen ease-in-out duration-300 h-80 w-72",
+      position: "end",
+      order: "order-2",
+      textOrder: "order-1",
     },
     {
       language: "AWS",
-      icon: <IconBrandAws color="white"/>,
+      icon: <IconBrandAws height={150} width={150} />,
+      styling: "text-awsOrange bg-awsBlue hover:text-awsBlue hover:bg-awsOrange ease-in-out duration-300 h-80 w-72",
+      position: "end",
+      order: "order-2",
+      textOrder: "order-1",
+    },
+    {
+      language: "Tailwind",
+      icon: <IconBrandTailwind height={150} width={150} />,
+      styling: "text-tailWLightBlue bg-tailWBlue hover:text-tailWBlue hover:bg-tailWLightBlue ease-in-out duration-300 h-80 w-72",
+      position: "end",
+      order: "order-2",
+      textOrder: "order-1",
     },
     {
       language: "SQL",
-      icon: <IconSql color="white"/>,
-    },
-    {
-      language: "SQL",
-      icon: <IconSql color="white"/>,
+      icon: <IconSql height={150} width={150} />,
+      styling: "text-white bg-sqlBlue hover:text-sqlBlue hover:bg-white ease-in-out duration-300 h-80 w-72",
+      position: "end",
+      order: "order-2",
+      textOrder: "order-1",
     },
   ];
 
   useEffect(() => {
-    if(isInView){
+    if (isInView) {
       setTimeout(() => {
         setAnimateComplete(true);
-      }, 1700)
-    }else{
-      setAnimateComplete(false)
+      }, 1700);
+    } else {
+      setAnimateComplete(false);
     }
   }, [isInView]);
- 
 
   return (
-    <div ref={ref} className="flex justify-center items-center h-screen w-screen mt-32 rounded-2xl">
-      {/* NOT SURE IF I WANT HEADER OR NOT*/}
-      {/* <h1 className="text-white text-9xl mt-72 lg:transform lg:absolute lg:left-44 lg:mb-44 border-b">skills</h1> */}
-      <div className={`flex ${animateComplete ? "glowing-shadow rounded-2xl" : ""}`}>
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -50 }}
-        transition={{ duration: 1, delay: 0.75 }}
-        className={`flex flex-col p-8 lg:p-16 rounded-l-2xl h-4/5 max-w-44 lg:max-w-none`}
-      >
-        <h2 className="text-white text-center text-3xl lg:text-6xl">Frontend</h2>
-        <div className="mt-16">
-          {frontendSkills.map((skill, index) => (
-            <div
-              key={index}
-              className="flex flex-row items-center justify-center p-4"
-            >
-              {/* <p className="flex flex-row text-elegantPink"><span className="mr-2">{skill.icon}</span>{skill.language}</p> */}
-              <span className="mr-2">{skill.icon}</span>
-            </div>
-          ))}
+    <div className="grid grid-cols-3 gap-6 transform -rotate-[30deg] mt-96">
+      {languages.map((lan, ind) => (
+        <div className={`${lan.styling} flex justify-center items-center transition-transform transform hover:scale-105`}>
+          {/* <p>{lan.language}</p> */}
+          <p>{lan.icon}</p>
         </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 50 }}
-        transition={{ duration: 1, delay: 0.75 }}
-        className={`flex flex-col p-8 lg:p-16 rounded-r-2xl h-4/5 max-w-44 lg:max-w-none`}
-      >
-        <h2 className="text-white text-center text-3xl lg:text-6xl">Backend</h2>
-        <div className="mt-16">
-          {backendSkills.map((skill, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center p-4"
-            >
-              {/* <p className="text-elegantPink flex flex-row"><span className="mr-2">{skill.icon}</span> {skill.language} </p> */}
-              <span className="mr-2">{skill.icon}</span>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-      </div>
+      ))}
     </div>
   );
 };

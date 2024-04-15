@@ -30,7 +30,7 @@ const Sidebar = () => {
           <ul>
             <li>
               <div className="border-2 border-aqua flex justify-center items-center rounded-full bg-customGrey h-8 w-8">
-                <p>SJ</p>
+                <p className="font-bold">SJ</p>
               </div>
             </li>
           </ul>

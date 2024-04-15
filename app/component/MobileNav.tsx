@@ -31,7 +31,7 @@ export const MobileNav: FC<Props> = ({setIsOpen}) => {
           <p>Home</p>
         </button>
       </Link>
-      <Link href="/about">
+      <Link href="/">
         <button 
         onClick={() => setIsOpen(false)}
         className="flex gap-4">

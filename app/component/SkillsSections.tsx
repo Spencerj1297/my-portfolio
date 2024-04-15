@@ -1,127 +1,102 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  IconBrandReact,
-  IconBrandTypescript,
-  IconBrandNextjs,
-  IconBrandPython,
-  IconDiamond,
-  IconHtml,
-  IconBrandCss3,
-  IconBrandCSharp,
-  IconSql,
-  IconBrandAws,
-  IconBrandJavascript,
-  IconBrandReactNative,
-  IconBrandNodejs,
-  IconBrandTailwind
-} from "@tabler/icons-react";
-import {
   motion,
-  useScroll,
-  useTransform,
   useInView,
   useAnimation,
+  useAnimationControls,
 } from "framer-motion";
+import { skills } from "../component/skillsData";
 
 export const SkillsSections = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  let { scrollYProgress } = useScroll();
-  const [animateComplete, setAnimateComplete] = useState<boolean>(false);
+  const [showDescription, setShowDescription] = useState<boolean>(false);
+  const [selectedSkillIndex, setSelectedSkillIndex] = useState<number | null>(
+    null
+  );
 
-  const languages = [
-    {
-      language: "Python",
-      icon: <IconBrandPython height={150} width={150} />,
-      styling: "text-pythonYellow bg-pythonBlue hover:text-pythonBlue hover:bg-pythonYellow ease-in-out duration-300 h-80 w-72",
-      position: "end",
-      order: "order-2",
-      textOrder: "order-1",
-    },
-    {
-      language: "C#",
-      icon: <IconBrandCSharp height={150} width={150} />,
-      styling: "text-white bg-cSharpPurple hover:text-cSharpPurple hover:bg-white ease-in-out duration-300 h-80 w-72",
-      position: "end",
-      order: "order-2",
-      textOrder: "order-1",
-    },
-    {
-      language: "Ruby on Rails",
-      icon: <IconDiamond height={150} width={150} />,
-      styling: "text-white bg-rubyRed hover:text-rubyRed hover:bg-white ease-in-out duration-300 h-80 w-72",
-      position: "start",
-      order: "order-1",
-      textOrder: "order-2",
-    },
-    {
-      language: "Javascript",
-      icon: <IconBrandJavascript height={150} width={150} />,
-      styling: "text-black bg-jsYellow hover:text-jsYellow hover:bg-black ease-in-out duration-300 h-80 w-72",
-      position: "end",
-      order: "order-2",
-      textOrder: "order-1",
-    },
-    {
-      language: "React.js",
-      icon: <IconBrandReactNative height={150} width={150} />,
-      styling: "text-reactBlue bg-reactGrey hover:text-reactGrey hover:bg-reactBlue ease-in-out duration-300 h-80 w-72",
-      position: "end",
-      order: "order-2",
-      textOrder: "order-1",
-    },
-    {
-      language: "Node.js",
-      icon: <IconBrandNodejs height={150} width={150} />,
-      styling: "text-nodeGreen bg-nodeBlue hover:text-nodeBlue hover:bg-nodeGreen ease-in-out duration-300 h-80 w-72",
-      position: "end",
-      order: "order-2",
-      textOrder: "order-1",
-    },
-    {
-      language: "AWS",
-      icon: <IconBrandAws height={150} width={150} />,
-      styling: "text-awsOrange bg-awsBlue hover:text-awsBlue hover:bg-awsOrange ease-in-out duration-300 h-80 w-72",
-      position: "end",
-      order: "order-2",
-      textOrder: "order-1",
-    },
-    {
-      language: "Tailwind",
-      icon: <IconBrandTailwind height={150} width={150} />,
-      styling: "text-tailWLightBlue bg-tailWBlue hover:text-tailWBlue hover:bg-tailWLightBlue ease-in-out duration-300 h-80 w-72",
-      position: "end",
-      order: "order-2",
-      textOrder: "order-1",
-    },
-    {
-      language: "SQL",
-      icon: <IconSql height={150} width={150} />,
-      styling: "text-white bg-sqlBlue hover:text-sqlBlue hover:bg-white ease-in-out duration-300 h-80 w-72",
-      position: "end",
-      order: "order-2",
-      textOrder: "order-1",
-    },
-  ];
+  const skillsRef = useRef(null);
+  const isInView = useInView(skillsRef);
+  const cardContainer = useAnimationControls();
+  const cardControls = useAnimationControls();
+  const mobilecardControls = useAnimation();
+
+  const handleSkillSelect = (ind: number) => {
+    setSelectedSkillIndex(ind);
+    setShowDescription(!showDescription);
+  };
 
   useEffect(() => {
     if (isInView) {
-      setTimeout(() => {
-        setAnimateComplete(true);
-      }, 1700);
+      cardContainer.start({
+        rotate: 360,
+        transition: { delay: 8, type: "spring", restSpeed: 3, duration: 1.5 },
+      });
+      cardControls.start({
+        opacity: 1,
+      });
+      mobilecardControls.start({
+        scale: 1,
+        opacity: 1,
+        y: 0,
+        rotate: 360,
+      });
     } else {
-      setAnimateComplete(false);
+      cardContainer.stop();
+      cardControls.stop();
+      mobilecardControls.stop();
     }
   }, [isInView]);
 
   return (
-    <div className="grid grid-cols-3 gap-6 transform -rotate-[30deg] mt-96">
-      {languages.map((lan, ind) => (
-        <div className={`${lan.styling} flex justify-center items-center transition-transform transform hover:scale-105`}>
-          {/* <p>{lan.language}</p> */}
-          <p>{lan.icon}</p>
-        </div>
-      ))}
+    <div ref={skillsRef}>
+      <motion.div
+        animate={cardContainer}
+        initial={{ rotate: -30 }}
+        className="hidden lg:grid lg:grid-cols-2 xl:grid-cols-4 gap-8"
+      >
+        {skills.map((skill, ind) => (
+          <motion.button
+            key={ind}
+            onClick={() => handleSkillSelect(ind)}
+            initial={{ opacity: 0 }}
+            animate={cardControls}
+            transition={{ delay: skill.transition }}
+            className={`${
+              skill.styling
+            } flex justify-center items-center transition-transform transform hover:scale-125 hover:z-20 skill-box-shadow rounded-lg ${
+              ind % 2 === 0 ? "first-column-style" : ""
+            }`}
+          >
+            {showDescription && selectedSkillIndex === ind ? (
+              <p className="font-bold"> This is a desciption </p>
+            ) : (
+              <p>{skill.icon}</p>
+            )}
+          </motion.button>
+        ))}
+      </motion.div>
+      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8">
+        {skills.map((skill, ind) => (
+          <motion.button
+            onClick={() => handleSkillSelect(ind)}
+            key={ind}
+            initial={{ scale: 0.5, opacity: 0, y: 100 }}
+            animate={mobilecardControls}
+            transition={{
+              delay: skill.transition,
+              type: "spring",
+              stiffness: 200,
+              damping: 20,
+            }}
+            className={`${skill.styling} flex justify-center items-center transition-transform transform hover:scale-105 skill-box-shadow`}
+          >
+            {showDescription && selectedSkillIndex === ind ? (
+              <p className="font-bold"> This is a desciption </p>
+            ) : (
+              <p>{skill.icon}</p>
+            )}
+          </motion.button>
+        ))}
+      </motion.div>
     </div>
   );
 };

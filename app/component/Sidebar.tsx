@@ -45,7 +45,7 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/about">
+              <Link href="/">
                 <p className="text-white hover:text-aqua hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1">
                   <IconUserFilled />
                 </p>

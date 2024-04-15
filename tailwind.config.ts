@@ -48,7 +48,8 @@ const config: Config = {
         awsOrange: "#F8991B",
         tailWBlue: "#121B2D",
         tailWLightBlue: "#16BDCA",
-        sqlBlue: "#005D85"
+        sqlBlue: "#005D85",
+        cssBlue:"#214CE5"
       },
     },
   },

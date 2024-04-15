@@ -101,6 +101,10 @@ body {
   opacity: 0;
   transform: scale(0.1, 1);
 }
+/*Shadow for home image*/
+.image-box-shadow{
+  box-shadow: inset 0 -2em 2em rgb(79 248 210 / 30%), #4ff8d2 0px 2px 15px 2px;
+}
 
 /*Glowing shadow*/
 .glowing-shadow {
@@ -122,4 +126,23 @@ body {
   }
 }
 
+/*Skill Section*/
+@media screen and (min-width: 992px) {
+  .first-column-style {
+    margin-top: -20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .first-column-style {
+    margin-top: -100px;
+  }
+}
+
+.skill-box-shadow{
+  box-shadow: inset 0 -2em 2em rgb(79 248 210 / 30%), #4ff8d2 0px 2px 15px 2px;
+}
+/* .skill-box-shadow:hover{
+  box-shadow: inset 0 -2em 2em rgba(248, 79, 234, 0.3), #e845f7 0px 20px 90px 20px;
+} */
 

@@ -10,20 +10,18 @@ export const Projects = () => {
     { title: "Zoee", video: "/home/zoee-video.mp4", link: "zoee" },
     { title: "devStuff", video: "/home/devstuff-video.mp4", link: "devstuff" },
     { title: "Yum", video: "/home/yum-video.mp4", link: "yum" },
-    { title: "Coming Soon", video: null, link: "" },
-    { title: "Coming Soon", video: null , link: "" },
-    { title: "Coming Soon", video: null, link: "" },
   ];
 
   return (
     <motion.div
-      className="mt-32 mb-32 lg:mb-96"
+      className="lg:mt-32 mb-32 lg:mb-96"
       animate={{ opacity: projectsInView ? 1 : 0 }}
       transition={{ duration: 1 }}
     >
-      <h1 className="text-customGrey text-6xl text-center lg:text-left lg:text-9xl mt-72 lg:transform lg:-rotate-90 lg:absolute lg:-left-28 border-t p-2">
+      <h1 className="text-customGrey text-6xl text-center lg:text-left lg:text-[150px] md:mt-72 lg:transform lg:-rotate-90 lg:absolute lg:-left-28 p-2">
         MY WORK
       </h1>
+      <div></div>
       <div
         ref={projectRef}
         className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
@@ -47,8 +45,8 @@ export const Projects = () => {
                   </>
               )}
              
-              <div className="transform hover:scale-102 transition duration-300 ease-in-out flex justify-center items-center h-44 min-w-44 bg-black opacity-0 hover:opacity-100 bg-opacity-50 p-8 rounded-full mb-24 z-20">
-                <h2 className="text-customGrey text-2xl font-bold">
+              <div className="transform hover:scale-102 transition duration-300 ease-in-out flex justify-center items-center h-44 min-w-44 bg-aqua opacity-0 hover:opacity-100 bg-opacity-60 p-8 rounded-full mb-24 z-20">
+                <h2 className="text-black text-2xl font-bold">
                   {project.title}
                 </h2>
               </div>

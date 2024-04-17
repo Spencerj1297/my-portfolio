@@ -21,7 +21,7 @@ export const SkillsSections = () => {
 
   const handleSkillSelect = (ind: number) => {
     setSelectedSkillIndex(ind);
-    setShowDescription(!showDescription);
+    setShowDescription(true);
   };
 
   useEffect(() => {
@@ -47,16 +47,20 @@ export const SkillsSections = () => {
   }, [isInView]);
 
   return (
+    <>
+    <div className="w-screen border-2 border-aqua skill-box-shadow"></div>
     <div ref={skillsRef}>
       <motion.div
         animate={cardContainer}
         initial={{ rotate: -30 }}
-        className="hidden lg:grid lg:grid-cols-2 xl:grid-cols-4 gap-8"
+        className="hidden lg:grid lg:grid-cols-2 xl:grid-cols-4 gap-8 lg:mt-64"
       >
         {skills.map((skill, ind) => (
           <motion.button
             key={ind}
-            onClick={() => handleSkillSelect(ind)}
+            onMouseEnter={() => handleSkillSelect(ind)}
+            onMouseLeave={() => setShowDescription(false)}
+            // onClick={() => handleSkillSelect(ind)}
             initial={{ opacity: 0 }}
             animate={cardControls}
             transition={{ delay: skill.transition }}
@@ -67,14 +71,14 @@ export const SkillsSections = () => {
             }`}
           >
             {showDescription && selectedSkillIndex === ind ? (
-              <p className="font-bold"> This is a desciption </p>
+              <p className="font-bold text-xs lg:text-sm p-2"> {skill.description}</p>
             ) : (
               <p>{skill.icon}</p>
             )}
           </motion.button>
         ))}
       </motion.div>
-      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8">
+      <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:hidden gap-8 mt-8">
         {skills.map((skill, ind) => (
           <motion.button
             onClick={() => handleSkillSelect(ind)}
@@ -90,7 +94,7 @@ export const SkillsSections = () => {
             className={`${skill.styling} flex justify-center items-center transition-transform transform hover:scale-105 skill-box-shadow`}
           >
             {showDescription && selectedSkillIndex === ind ? (
-              <p className="font-bold"> This is a desciption </p>
+              <p className="font-bold text-xs lg:text-sm p-2"> {skill.description}</p>
             ) : (
               <p>{skill.icon}</p>
             )}
@@ -98,5 +102,6 @@ export const SkillsSections = () => {
         ))}
       </motion.div>
     </div>
+    </>
   );
 };

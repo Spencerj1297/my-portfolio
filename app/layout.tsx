@@ -5,7 +5,7 @@ import Sidebar from './component/Sidebar'
 
 const roboto = Roboto({ 
   subsets: ["latin"],
-  weight: '300'
+  weight: '400'
 });
 
 export const metadata: Metadata = {

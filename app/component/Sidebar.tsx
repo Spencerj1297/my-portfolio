@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import {
   IconHome,
@@ -9,12 +9,16 @@ import {
   IconKeyboard,
   IconMenu,
 } from "@tabler/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MobileNav } from "./MobileNav";
+import { usePathname, useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 
 const Sidebar = () => {
-
-  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false)
+  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
+  // const router = useRouter()
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleClick = () => {
     const projectSection = document.getElementById("projectSection");
@@ -29,8 +33,8 @@ const Sidebar = () => {
         <div className="pt-2">
           <ul>
             <li>
-              <div className="border-2 border-aqua flex justify-center items-center rounded-full bg-customGrey h-8 w-8">
-                <p className="font-bold">SJ</p>
+              <div className="border-2 border-elegantPink flex justify-center items-center rounded-full h-8 w-8 bg-gradient-custom">
+                <p className="font-bold text-aqua">SJ</p>
               </div>
             </li>
           </ul>
@@ -45,18 +49,24 @@ const Sidebar = () => {
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/">
+              <Link href="/about">
                 <p className="text-white hover:text-aqua hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1">
                   <IconUserFilled />
                 </p>
               </Link>
             </li>
             <li className="mb-4">
-                <button
+              <button
+                disabled={pathname != "/"}
                 onClick={handleClick}
-                className="text-white hover:text-aqua hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1">
-                  <IconKeyboard />
-                </button>
+                className={`${
+                  pathname != "/"
+                    ? "text-black bg-customGrey rounded-lg p-1 bg-opacity-10"
+                    : "text-white hover:text-aqua hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1"
+                }`}
+              >
+                <IconKeyboard />
+              </button>
             </li>
             <li className="mb-4">
               <a
@@ -92,18 +102,17 @@ const Sidebar = () => {
         <div className="pt-2">
           <ul>
             <li>
-              <button 
+              <button
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
-              className="text-white hover:text-elegantPink hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1">
+                className="text-white hover:text-elegantPink hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1"
+              >
                 <IconMenu />
               </button>
             </li>
           </ul>
         </div>
       </div>
-      {mobileNavOpen && (
-        <MobileNav setIsOpen={setMobileNavOpen}/>
-      )}
+      {mobileNavOpen && <MobileNav setIsOpen={setMobileNavOpen} />}
     </>
   );
 };

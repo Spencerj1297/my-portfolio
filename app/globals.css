@@ -6,7 +6,7 @@
 /* globals.css */
 
 body {
-  background-color: #000000f8; /* Light gray background */
+  background-color: #000000; 
   overflow-x: hidden;  
 }
 
@@ -142,7 +142,42 @@ body {
 .skill-box-shadow{
   box-shadow: inset 0 -2em 2em rgb(79 248 210 / 30%), #4ff8d2 0px 2px 15px 2px;
 }
+
 /* .skill-box-shadow:hover{
   box-shadow: inset 0 -2em 2em rgba(248, 79, 234, 0.3), #e845f7 0px 20px 90px 20px;
 } */
+
+.bubble {
+  --r: 25px; /* the radius */
+  --t: 30px; /* the size of the tail */
+  
+  padding: calc(2*var(--r)/3);
+  -webkit-mask: 
+    radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
+      var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+    conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
+      calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+    radial-gradient(50% 50%,#000 98%,#0000 101%) 
+      0 0/var(--r) var(--r) space padding-box;
+  background: linear-gradient(135deg,#FE6D00,#1384C5) border-box;
+  color: #fff;
+}
+.left {
+  --_d: 0%;
+  border-left: var(--t) solid #0000;
+  margin-right: var(--t);
+  place-self: start;
+}
+.right {
+  --_d: 100%;
+  border-right: var(--t) solid #0000;
+  margin-left: var(--t);
+  place-self: end;
+}
+
+/*Project Pages*/
+
+.black-box-shadow{
+  box-shadow: #000000 0px 2px 15px 2px;
+}
 

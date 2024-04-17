@@ -12,7 +12,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-          "gradient-custom": "linear-gradient(180deg, black , rgba(79, 248, 210, 0.20))",
+          "gradient-custom": "linear-gradient(180deg, rgba(0, 0, 0, 248), rgba(79, 248, 210, 0.20))",
       },
       boxShadow: {
         customShadow: "12px 12px 2px 1px rgba(233, 128, 116, .3)",

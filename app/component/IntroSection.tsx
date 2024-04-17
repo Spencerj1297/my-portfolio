@@ -30,7 +30,7 @@ export const IntroSection = () => {
           <br /><br/>
           Software Developer{" "}
         </h2>
-        <p className="text-xl lg:text-2xl text-customGrey text-center md:text-start border-l-2 px-4 lg:max-w-3xl lg:mt-12">
+        <p className="text-xl lg:text-2xl text-customGrey text-center md:text-start border-l-2 border-aqua px-4 lg:max-w-3xl lg:mt-12">
           I specialize in building (and occasionally designing) exceptional
           digital experiences. Currently, I’m focused on building accessible,
           human-centered products at Zoee Inc.{" "}

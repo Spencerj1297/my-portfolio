@@ -29,7 +29,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="hidden md:flex h-screen w-16 fixed right-0 overflow-y-auto flex-col justify-center items-center z-20">
+      <div className="hidden md:flex h-screen w-16 fixed right-0 overflow-y-auto flex-col justify-center items-center z-30">
         <div className="pt-2">
           <ul>
             <li>

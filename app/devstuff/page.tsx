@@ -30,7 +30,7 @@ export default function DevStuff() {
 
   const devStuffPersonalGrowth = ``;
 
-  const devStuffVideo = "/home/devStuff-video.mp4";
+  const devStuffVideo = "/home/devstuff-video.mp4";
 
   return (
     <main className="min-h-screen p-4 lg:py-24 lg:px-44 flex flex-col gap-16 bg-gradient-custom">

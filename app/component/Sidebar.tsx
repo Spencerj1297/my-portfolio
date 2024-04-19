@@ -12,10 +12,13 @@ import {
 import { useEffect, useState } from "react";
 import { MobileNav } from "./MobileNav";
 import { usePathname, useRouter } from "next/navigation";
+import { SettingMenu } from "./SettingMenu";
 // import { useRouter } from "next/router";
 
 const Sidebar = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
+  const [settingMenu, setSettingMenu] = useState<boolean>(false);
+
   // const router = useRouter()
   const pathname = usePathname();
   const router = useRouter();
@@ -91,9 +94,11 @@ const Sidebar = () => {
         <div className="pb-2">
           <ul>
             <li>
-              <p className="text-white hover:text-elegantPink hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1">
+              <button
+                onClick={() => setSettingMenu(!settingMenu)}
+              className="text-white hover:text-elegantPink hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1">
                 <IconSettingsFilled />
-              </p>
+              </button>
             </li>
           </ul>
         </div>
@@ -104,15 +109,16 @@ const Sidebar = () => {
             <li>
               <button
                 onClick={() => setMobileNavOpen(!mobileNavOpen)}
-                className="text-white hover:text-elegantPink hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1"
+                className="text-white hover:text-elegantPink hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1 z-50"
               >
-                <IconMenu />
+                <IconMenu size={48} />
               </button>
             </li>
           </ul>
         </div>
       </div>
       {mobileNavOpen && <MobileNav setIsOpen={setMobileNavOpen} />}
+      {settingMenu && <SettingMenu />}
     </>
   );
 };

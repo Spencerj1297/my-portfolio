@@ -7,56 +7,53 @@ import {
   IconBrandGithubFilled,
   IconBrandBitbucket,
   IconKeyboard,
-  IconMenu,
+  IconX,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
-interface Props{
-  setIsOpen: Dispatch<SetStateAction<boolean>>
+interface Props {
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export const MobileNav: FC<Props> = ({setIsOpen}) => {
+export const MobileNav: FC<Props> = ({ setIsOpen }) => {
   return (
     <>
-    <div className="fixed left-8 top-4 border-2 border-elegantPink flex justify-center items-center rounded-full bg-customGrey h-10 w-10 z-30">
-    <p>SJ</p>
-  </div>
-    <div className="h-5/6 w-5/6 flex justify-center items-center bg-black bg-opacity-90 fixed top-0 z-20 border-r border-b border-customGrey">
-      <div className="text-elegantPink flex flex-col gap-16">
-      <Link href="/">
-        <button 
+      <div className="fixed top-0 w-screen h-screen bg-black bg-opacity-75 bg-gradient-custom text-white z-50 flex flex-col gap-4 items-center justify-center">
+        <Link href="/">
+        <button
         onClick={() => setIsOpen(false)}
-        className="flex gap-4">
-          <IconHome />
-          <p>Home</p>
-        </button>
-      </Link>
-      <Link href="/">
-        <button 
-        onClick={() => setIsOpen(false)}
-        className="flex gap-4">
-          <IconUserFilled />
-          <p>About me</p>
+        >
+          <IconHome size={48} />
         </button>
         </Link>
-        <button className="flex gap-4">
-          <IconBrandGithubFilled />
-          <p>Github</p>
-        </button>
-        <button className="flex gap-4">
-          <IconBrandBitbucket />
-          <p>Bitbucket</p>
-        </button>
-        <button className="flex gap-4">
-          <IconKeyboard />
-          <p>My work</p>
-        </button>
-        <button className="flex gap-4">
-          <IconSettingsFilled />
-          <p>Settings</p>
+        <Link href="/about">
+          <button onClick={() => setIsOpen(false)}>
+            <IconUserFilled size={48} />
+          </button>
+        </Link>
+        <a
+          href="https://github.com/Spencerj1297"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>
+            <IconBrandGithubFilled size={48} />
+          </p>
+        </a>
+        <p>
+          <IconBrandBitbucket size={48} />
+        </p>
+        <p>
+          <IconSettingsFilled size={48} />
+        </p>
+
+        <button
+          onClick={() => setIsOpen(false)}
+          className="fixed right-0 top-1 text-white"
+        >
+          <IconX size={48} />
         </button>
       </div>
-    </div>
     </>
   );
 };

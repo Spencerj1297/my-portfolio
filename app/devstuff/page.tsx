@@ -28,7 +28,9 @@ export default function DevStuff() {
     { title: "CSS3", icon: <IconBrandCss3 /> },
   ];
 
-  const devStuffPersonalGrowth = ``;
+  const devStuffPersonalGrowth = `Initially, I set out to establish DevStuff as a platform for selling programmer merchandise, including t-shirts and coffee mugs. However, managing the design and shipping logistics proved to be more challenging than anticipated. Consequently, I pivoted the focus of the site towards catering to enthusiasts of mice and various mechanical keyboards.
+  With this new direction, I embarked on exploring the complexities of local storage for implementing a robust shopping cart system. Unlike traditional e-commerce setups that often require user accounts to store items in a cart, I aimed to empower users to add and manipulate items in their cart without the need for an account. Leveraging local storage, I achieved this goal, allowing users to freely manage their selections until they are ready to proceed to checkout.
+  While considering alternatives such as cookies for this purpose, I found that local storage offered a more efficient solution, particularly in terms of implementation and performance. Currently, I'm also in the process of integrating Stripe payment processing, complete with comprehensive test cases, to ensure a seamless purchasing experience for our users.`;
 
   const devStuffVideo = "/home/devstuff-video.mp4";
 

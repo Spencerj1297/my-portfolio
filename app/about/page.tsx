@@ -1,11 +1,7 @@
 "use client";
-import Image from "next/image";
 import { StaticImageData } from "next/image";
-import programmer from "../assets/programmer.jpeg";
-import me from "../assets/me.png";
 import "@splidejs/react-splide/css/sea-green";
 // @ts-ignore
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChatButton } from "../component/ChatButton";
@@ -17,27 +13,7 @@ type Photos = {
 };
 
 export default function About() {
-  const [displayedMessage, setDisplayedMessage] = useState("");
-
-  // const photos: Photos[] = [
-  //   { photo: programmer, altText: "fdsaf" },
-  //   { photo: me, altText: "fdsa" },
-  //   { photo: programmer, altText: "fdsa" },
-  //   { photo: me, altText: "fdsa" },
-  // ];
-
-  // const options = {
-  //   type: "loop",
-  //   gap: "1rem",
-  //   autoplay: true,
-  //   wheelMinThreshold: 30,
-  //   pauseOnHover: false,
-  //   resetProgress: false,
-  //   arrows: false,
-  //   wheel: true,
-  //   height: "20rem",
-  // };
-
+  
   const getMessage = () => {
     const message = `Thank you for checking out my site. I\'m Spencer, full-stack software developer, surfer, and most importantly, husband to my awesome wife. Feel free to checkout my projects found on the homepage and message me with any questions by hitting the button below`;
 
@@ -63,7 +39,7 @@ export default function About() {
         animate={{ opacity: 1 }}
         className="flex flex-row text-white"
       >
-        {`${displayedMessage}`}
+        {displayedMessage}
         {/* <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -82,7 +58,7 @@ export default function About() {
 
   return (
     <main className="min-h-screen bg-gradient-custom">
-      <div className="h-screen w-screen fixed top-0 z-20 flex flex-col justify-center items-center gap-8 px-8 lg:px-8">
+      <div className="h-screen w-screen fixed top-0 z-10 flex flex-col justify-center items-center gap-8 px-8 lg:px-8">
         <div className="text-white text-2xl w-full lg:w-3/6 flex">
           {getMessage()}
         </div>
@@ -112,28 +88,11 @@ export default function About() {
         playsInline
         loop
         muted
-        className="w-screen h-screen object-cover z-10 opacity-20 glowing-shadow"
+        className="w-screen h-screen object-cover z-0 opacity-20 glowing-shadow"
       >
         <source src={"home/video.mp4"} type="video/mp4" />
         Sorry, your browser doesn&apost support videos.
       </video>
-      {/* <Splide className="flex opacity-50" options={options} aria-label="My Favorite Images">
-        {photos.map((photo, ind) => (
-          <SplideSlide
-            // interval="1000"
-            className=""
-            key={ind}
-          >
-            <Image
-              className=""
-              height={300}
-              width={300}
-              src={photo.photo}
-              alt={photo.altText}
-            />
-          </SplideSlide>
-        ))}
-      </Splide> */}
     </main>
   );
 }

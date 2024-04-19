@@ -91,7 +91,7 @@ export const SkillsSections = () => {
               stiffness: 200,
               damping: 20,
             }}
-            className={`${skill.styling} flex justify-center items-center transition-transform transform hover:scale-105 skill-box-shadow`}
+            className={`${skill.styling} flex justify-center items-center transition-transform transform hover:scale-105 skill-box-shadow last:mb-8`}
           >
             {showDescription && selectedSkillIndex === ind ? (
               <p className="font-bold text-xs lg:text-sm p-2"> {skill.description}</p>

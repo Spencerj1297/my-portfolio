@@ -81,10 +81,10 @@ export const ProjectPage: FC<Props> = ({
         </motion.div>
       </div>
       <div className="flex flex-col gap-4 -mt-32 lg:-mt-96 z-10">
-        <h1 className="text-9xl text-customGrey text-center">{pageTitle}</h1>
+        <h1 className="text-6xl text-customGrey text-center">{pageTitle}</h1>
         <div className="w-full border-2 border-aqua lg:mt-16 skill-box-shadow"></div>
         <div className="flex justify-center items-center flex-col lg:flex-row w-full text-3xl text-customGrey lg:mt-16">
-          <p className="lg:w-3/6 bg-black bg-opacity-20 p-8 rounded-xl">
+          <p className="lg:w-3/6 bg-black bg-opacity-20 lg:p-8 rounded-xl">
             {pageDescription}
             <br />
             <br />

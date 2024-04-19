@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import me from "../assets/me.png";
 import { ChatButton } from "./ChatButton";
@@ -7,10 +7,14 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 export const IntroSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const [loading, setLoading] = useState<Boolean>(false)
 
-  //Parallax effect 
   let {scrollYProgress} = useScroll()
   let y = useTransform(scrollYProgress, [0, 1], ['0%', '150%'])
+
+  useEffect(() => {
+    setLoading(true)
+  }, [])
 
   return (
     <motion.div
@@ -18,9 +22,10 @@ export const IntroSection = () => {
       transition={{ duration: .50 }}
       className="h-screen mb-4 z-0"
     >
+
       <div
         ref={ref}
-        className="flex flex-col justify-center items-center md:items-start md:justify-start gap-8 pt-8 z-20"
+        className="flex flex-col justify-center items-center md:items-start md:justify-start gap-8 pt-32 lg:pt-8 z-20"
       >
         <h1 className={`text-6xl lg:text-[150px] text-customGrey mb-16`}>
           Welcome

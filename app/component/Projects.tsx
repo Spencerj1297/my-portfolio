@@ -14,7 +14,7 @@ export const Projects = () => {
 
   return (
     <motion.div
-      className="lg:mt-32 mb-32 lg:mb-96"
+      className="lg:mt-32 lg:mb-96"
       animate={{ opacity: projectsInView ? 1 : 0 }}
       transition={{ duration: 1 }}
     >

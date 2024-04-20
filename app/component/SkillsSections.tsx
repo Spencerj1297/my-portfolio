@@ -9,6 +9,7 @@ import { skills } from "../component/skillsData";
 
 export const SkillsSections = () => {
   const [showDescription, setShowDescription] = useState<boolean>(false);
+  const [theme, setTheme] = useState<string | null>(null);
   const [selectedSkillIndex, setSelectedSkillIndex] = useState<number | null>(
     null
   );
@@ -46,9 +47,27 @@ export const SkillsSections = () => {
     }
   }, [isInView]);
 
+
+
+  useEffect(() => {
+    const handleThemeChange = () => {
+      const newTheme = localStorage.getItem("theme");
+      setTheme(newTheme);
+    };
+
+    window.addEventListener("storage", handleThemeChange);
+
+    // Immediately update theme state on mount
+    const value = localStorage.getItem("theme");
+    setTheme(value);
+
+    return () => {
+      window.removeEventListener("storage", handleThemeChange);
+    };
+  }, []);
   return (
     <>
-    <div className="w-screen border-2 border-aqua skill-box-shadow"></div>
+    <div className={`w-screen border-2 ${theme === "crazy" ? "border-summerPink crazy-box-shadow" : "border-aqua skill-box-shadow"}`}></div>
     <div ref={skillsRef}>
       <motion.div
         animate={cardContainer}

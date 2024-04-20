@@ -13,6 +13,7 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           "gradient-custom": "linear-gradient(180deg, rgba(0, 0, 0, 248), rgba(79, 248, 210, 0.20))",
+          "gradient-summer": "linear-gradient(180deg, rgb(103, 63, 105, 0.70), rgb(255, 175, 69, 0.80))"
       },
       boxShadow: {
         customShadow: "12px 12px 2px 1px rgba(233, 128, 116, .3)",
@@ -49,7 +50,12 @@ const config: Config = {
         tailWBlue: "#121B2D",
         tailWLightBlue: "#16BDCA",
         sqlBlue: "#005D85",
-        cssBlue:"#214CE5"
+        cssBlue:"#214CE5",
+        summerPink: "#D74B76",
+        summerOrange: "#fb6d48",
+        summerYellow: "#FFAF45",
+        summerRed: "#F1172F",
+        summerPurple: "#673F69"
       },
     },
   },

@@ -36,9 +36,15 @@ const Sidebar = () => {
         <div className="pt-2">
           <ul>
             <li>
-              <div className="border-2 border-elegantPink flex justify-center items-center rounded-full h-8 w-8 bg-gradient-custom">
-                <p className="font-bold text-aqua">SJ</p>
-              </div>
+              <a
+                href="https://www.linkedin.com/in/a-spencer-johnson/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="border-2 border-elegantPink text-aqua flex justify-center items-center rounded-full h-8 w-8 bg-gradient-custom hover:bg-aqua hover:text-elegantPink">
+                  <p className="font-bold">SJ</p>
+                </div>
+              </a>
             </li>
           </ul>
         </div>
@@ -96,7 +102,8 @@ const Sidebar = () => {
             <li>
               <button
                 onClick={() => setSettingMenu(!settingMenu)}
-              className="text-white hover:text-elegantPink hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1">
+                className="text-white hover:text-elegantPink hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1"
+              >
                 <IconSettingsFilled />
               </button>
             </li>

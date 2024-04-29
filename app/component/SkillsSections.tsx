@@ -67,7 +67,7 @@ export const SkillsSections = () => {
   }, []);
   return (
     <>
-    <div className={`w-screen border-2 ${theme === "crazy" ? "border-summerPink crazy-box-shadow" : "border-aqua skill-box-shadow"}`}></div>
+    <div className={`w-screen border-2 ${theme === "cyber" ? "border-elegantPink cyber-box-shadow" : "border-aqua skill-box-shadow"}`}></div>
     <div ref={skillsRef}>
       <motion.div
         animate={cardContainer}
@@ -85,7 +85,7 @@ export const SkillsSections = () => {
             transition={{ delay: skill.transition }}
             className={`${
               skill.styling
-            } flex justify-center items-center transition-transform transform hover:scale-125 hover:z-20 skill-box-shadow rounded-lg ${
+            } flex justify-center items-center transition-transform transform hover:scale-125 hover:z-20 ${theme === "cyber" ? "cyber-box-shadow" : "skill-box-shadow"} rounded-lg ${
               ind % 2 === 0 ? "first-column-style" : ""
             }`}
           >
@@ -110,7 +110,7 @@ export const SkillsSections = () => {
               stiffness: 200,
               damping: 20,
             }}
-            className={`${skill.styling} flex justify-center items-center transition-transform transform hover:scale-105 skill-box-shadow last:mb-8`}
+            className={`${skill.styling} flex justify-center items-center transition-transform transform hover:scale-105 ${theme === "cyber" ? "cyber-box-shadow" : "skill-box-shadow"} last:mb-8`}
           >
             {showDescription && selectedSkillIndex === ind ? (
               <p className="font-bold text-xs lg:text-sm p-2"> {skill.description}</p>

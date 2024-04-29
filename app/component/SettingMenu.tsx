@@ -22,12 +22,12 @@ export const SettingMenu = () => {
       className="bg-elegantPink rounded-lg w-full w-full font-bold bg-opacity-50 hover:bg-opacity-100">
         Cyber
       </button>
-      <button 
+      {/* <button 
        onClick={() => {
         localStorage.setItem("theme", 'crazy')
         location.reload()
       }}
-      className="bg-customGrey rounded-lg w-full w-full font-bold bg-opacity-50 hover:bg-opacity-100">?</button>
+      className="bg-customGrey rounded-lg w-full w-full font-bold bg-opacity-50 hover:bg-opacity-100">?</button> */}
     </motion.div>
   );
 };

@@ -1,8 +1,11 @@
 import { useInView, motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import Link from "next/link";
 
-export const Projects = () => {
+interface Props{
+  theme: string
+}
+export const Projects: FC<Props> = ({theme}) => {
   const projectRef = useRef(null);
   const projectsInView = useInView(projectRef);
 
@@ -45,7 +48,7 @@ export const Projects = () => {
                   </>
               )}
              
-              <div className="transform hover:scale-102 transition duration-300 ease-in-out flex justify-center items-center h-44 min-w-44 bg-aqua opacity-0 hover:opacity-100 bg-opacity-60 p-8 rounded-full mb-24 z-20">
+              <div className={`transform hover:scale-102 transition duration-300 ease-in-out flex justify-center items-center h-44 min-w-44 opacity-0 hover:opacity-100 bg-opacity-60 p-8 rounded-full mb-24 z-20 ${theme === "cyber" ? "bg-elegantPink" : "bg-aqua"}`}>
                 <h2 className="text-black text-2xl font-bold">
                   {project.title}
                 </h2>

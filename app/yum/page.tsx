@@ -26,7 +26,7 @@ export default function Yum() {
   const yumVideo = "/home/yum-video.mp4";
 
   return (
-    <main className="min-h-screen p-4 lg:py-24 lg:px-44 flex flex-col gap-16 bg-gradient-custom">
+    <main>
       <ProjectPage
         tech={yumTech}
         pageTitle={yumTitle}

@@ -2,12 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* globals.css */
 
 body {
-  background-color: #000000; 
-  overflow-x: hidden;  
+  background-color: #000000;
+  overflow-x: hidden;
 }
 
 /* SCROLL BAR STYLES*/
@@ -20,7 +19,7 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--secondary) var(--primary);
-  cursor: url('./assets/cursor.svg'), auto !important;
+  cursor: url("./assets/cursor.svg"), auto !important;
 }
 
 *::-webkit-scrollbar {
@@ -35,7 +34,7 @@ body {
 
 *::-webkit-scrollbar-thumb {
   background-color: var(--secondary);
-  border-radius: 10px; 
+  border-radius: 10px;
   border: 3px solid var(--primary);
 }
 
@@ -133,8 +132,8 @@ body {
   border-bottom-width: 1px;
   border-top-style: solid;
   border-bottom-style: solid;
-  border-top-color: #D74B76;
-  border-bottom-color: #D74B76;
+  border-top-color: #d74b76;
+  border-bottom-color: #d74b76;
   transform: scale(0.1, 1);
 }
 .btn-summer-one:hover span {
@@ -161,7 +160,7 @@ body {
 }
 
 /*Shadow for home image*/
-.image-box-shadow{
+.image-box-shadow {
   box-shadow: inset 0 -2em 2em rgb(79 248 210 / 30%), #4ff8d2 0px 2px 15px 2px;
 }
 
@@ -172,16 +171,18 @@ body {
 }
 
 :root {
-  --pulse-size: 150px; 
-  --pulse-offset: calc(var(--pulse-size) * 0.2); 
+  --pulse-size: 150px;
+  --pulse-offset: calc(var(--pulse-size) * 0.2);
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 var(--pulse-size) 0 rgba(79, 248, 210, 0.7);
   }
   50% {
-    box-shadow: 0 0 calc(var(--pulse-size) + var(--pulse-offset)) 0 rgba(79, 248, 210, 0.2);
+    box-shadow: 0 0 calc(var(--pulse-size) + var(--pulse-offset)) 0
+      rgba(79, 248, 210, 0.2);
   }
 }
 
@@ -192,36 +193,40 @@ body {
 }
 
 :root {
-  --pulse-size: 150px; 
-  --pulse-offset: calc(var(--pulse-size) * 0.2); 
+  --pulse-size: 150px;
+  --pulse-offset: calc(var(--pulse-size) * 0.2);
 }
 
 @keyframes pulse-cyber {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 var(--pulse-size) 0 rgba(233, 128, 116, 0.7);
   }
   50% {
-    box-shadow: 0 0 calc(var(--pulse-size) + var(--pulse-offset)) 0 rgba(233, 128, 116, 0.2);
+    box-shadow: 0 0 calc(var(--pulse-size) + var(--pulse-offset)) 0
+      rgba(233, 128, 116, 0.2);
   }
 }
 
 /*crazy shadow*/
 .crazy-shadow {
-  box-shadow: 0 0 0 0 #FB6D48; /* Glowing effect shadow */
+  box-shadow: 0 0 0 0 #fb6d48; /* Glowing effect shadow */
   animation: pulse-crazy 6s infinite ease-in-out;
 }
 
 :root {
-  --pulse-size: 350px; 
-  --pulse-offset: calc(var(--pulse-size) * 0.2); 
+  --pulse-size: 350px;
+  --pulse-offset: calc(var(--pulse-size) * 0.2);
 }
 
 @keyframes pulse-crazy {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 var(--pulse-size) 0 rgba(251, 109, 72, 1);
   }
   50% {
-    box-shadow: 0 0 calc(var(--pulse-size) + var(--pulse-offset)) 0 rgba(251, 109, 72, 0.2);
+    box-shadow: 0 0 calc(var(--pulse-size) + var(--pulse-offset)) 0
+      rgba(251, 109, 72, 0.2);
   }
 }
 
@@ -238,12 +243,12 @@ body {
   }
 }
 
-.skill-box-shadow{
+.skill-box-shadow {
   box-shadow: inset 0 -2em 2em rgb(79 248 210 / 30%), #4ff8d2 0px 2px 15px 2px;
 }
 
-.crazy-box-shadow{
-  box-shadow: inset 0 -2em 2em rgb(215 75 118/ 30%), #D74B76 0px 2px 15px 2px;
+.cyber-box-shadow {
+  box-shadow: inset 0 -2em 2em rgb(233 128 116 / 30%), #e98074 0px 2px 15px 2px;
 }
 
 /* .skill-box-shadow:hover{
@@ -253,16 +258,15 @@ body {
 .bubble {
   --r: 25px; /* the radius */
   --t: 30px; /* the size of the tail */
-  
-  padding: calc(2*var(--r)/3);
-  -webkit-mask: 
-    radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
-      var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
-    conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
-      calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
-    radial-gradient(50% 50%,#000 98%,#0000 101%) 
-      0 0/var(--r) var(--r) space padding-box;
-  background: linear-gradient(135deg,#FE6D00,#1384C5) border-box;
+
+  padding: calc(2 * var(--r) / 3);
+  -webkit-mask: radial-gradient(var(--t) at var(--_d) 0, #0000 98%, #000 102%)
+      var(--_d) 100% / calc(100% - var(--r)) var(--t) no-repeat,
+    conic-gradient(at var(--r) var(--r), #000 75%, #0000 0) calc(var(--r) / -2)
+      calc(var(--r) / -2) padding-box,
+    radial-gradient(50% 50%, #000 98%, #0000 101%) 0 0 / var(--r) var(--r) space
+      padding-box;
+  background: linear-gradient(135deg, #fe6d00, #1384c5) border-box;
   color: #fff;
 }
 .left {
@@ -280,7 +284,6 @@ body {
 
 /*Project Pages*/
 
-.black-box-shadow{
+.black-box-shadow {
   box-shadow: #000000 0px 2px 15px 2px;
 }
-

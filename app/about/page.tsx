@@ -77,7 +77,7 @@ export default function About() {
   }, []);
 
   return (
-    <main className={`min-h-screen ${theme === "crazy" ? "bg-gradient-summer" : "bg-gradient-custom"}`}>
+    <main className={`min-h-screen ${theme === "cyber" ? "bg-gradient-cyber" : "bg-gradient-custom"}`}>
       <div className="h-screen w-screen fixed top-0 z-10 flex flex-col justify-center items-center gap-8 px-8 lg:px-8">
         <div className="text-white text-2xl w-full lg:w-3/6 flex">
           {getMessage()}

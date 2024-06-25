@@ -11,8 +11,10 @@ export const Projects: FC<Props> = ({theme}) => {
 
   const projects = [
     { title: "Zoee", video: "/home/zoee-video.mp4", link: "zoee" },
-    { title: "devStuff", video: "/home/devstuff-video.mp4", link: "devstuff" },
+    { title: "HSM-75", video: "/home/hsm.mp4", link: "hsm" },
     { title: "Flow State", video: "/home/flow-video.mp4", link: "flowstate" },
+    { title: "Cross Hearts", video: "/home/crossedHearts.mp4", link: "crossedhearts" },
+    { title: "devStuff", video: "/home/devstuff-video.mp4", link: "devstuff" },
     { title: "Yum", video: "/home/yum-video.mp4", link: "yum" },
   ];
 

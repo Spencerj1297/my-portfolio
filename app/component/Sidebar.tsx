@@ -4,7 +4,6 @@ import {
   IconHome,
   IconUserFilled,
   IconSettingsFilled,
-  IconBrandGithubFilled,
   IconBrandBitbucket,
   IconKeyboard,
   IconMenu,
@@ -76,17 +75,6 @@ const Sidebar = () => {
               >
                 <IconKeyboard />
               </button>
-            </li>
-            <li className="mb-4">
-              <a
-                href="https://github.com/Spencerj1297"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p className="text-white hover:text-aqua hover:bg-customGrey hover:bg-opacity-10 rounded-lg p-1">
-                  <IconBrandGithubFilled />
-                </p>
-              </a>
             </li>
             <li className="mb-4">
               <a href="" target="_blank" rel="noopener noreferrer">
